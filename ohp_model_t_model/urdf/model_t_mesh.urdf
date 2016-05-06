@@ -156,4 +156,25 @@
     <parent link ="finger4_prox"/>
     <child link="finger4_dist"/>
   </joint>
+
+  <gripper name="yale_model_t">
+	  <!-- http://answers.ros.org/question/201625/turtlebot-arm-on-gazebo-lets-fall-all-grasped-objects/ -->
+	  <!-- http://answers.gazebosim.org/question/4324/gripper-tag-gazebophysicsgripper-doesnt-create-the-fixed-joint-between-the-gripper-and-the-object-within-it/ -->
+	  <grasp_check>
+		<attach_steps>5</attach_steps>
+		<detach_steps>10</detach_steps>
+	  </grasp_check>
+	  <!-- These surfaces move to press against the object. -->
+	  <!-- (these are link names; grep for "link" to see a full list) -->
+	  <gripper_link>finger1_prox</gripper_link>
+	  <gripper_link>finger1_dist</gripper_link>
+	  <gripper_link>finger2_prox</gripper_link>
+	  <gripper_link>finger2_dist</gripper_link>
+	  <gripper_link>finger3_prox</gripper_link>
+	  <gripper_link>finger3_dist</gripper_link>
+	  <gripper_link>finger4_prox</gripper_link>
+	  <gripper_link>finger4_dist</gripper_link>
+	  <!-- This surface is held in place. -->
+	  <palm_link>base_link</palm_link>
+  </gripper>
 </robot>
